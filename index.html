@@ -4,7 +4,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='icon' href='logo_minified.svg'>
+    <link rel='icon' href='imgs/logo_minified.svg'>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +25,7 @@
 
         <!-- greeting logo swiping off the screen -->
         <div id="greeting" class='center'>
-            <img id='logo' src='logo_light.svg'>
+            <img id='logo' src='imgs/logo_light.svg'>
         </div>
 
         <!-- theme switch -->
@@ -37,13 +37,19 @@
         <!-- business card -->
         <div id="card" class='center column'>
             <header class='center'>
-                <img id='logo' src='logo.svg'>
+                <img id='logo' src='imgs/logo.svg'>
                 <div id="content">
                     <h1>Konrad Ceglarski</h1>
                     <p>Student / Programmer / Designer</p>
+                    <p><i class="fas fa-map-marker-alt red"></i>Wrocław, Poland</p>
                     <div class="line"></div>
+                    <p class='subtitle'>Contact information</p>
                     <a href='mailto:ceg.kond@gmail.com'><i class="fas fa-envelope"></i>ceg.kond@gmail.com</a>
-                    <a><i class="fas fa-phone-alt"></i>603 359 536</a>
+                    <a href='https://github.com/xkond3i'><i class="fab fa-github"></i>github profile</a>
+                    <a href='tel:603359536'><i class="fas fa-phone-alt"></i>603 359 536</a>
+                    <!-- <div class="line"></div> -->
+                    <p class='subtitle' style='margin-top: 8px'>Websites I've worked on</p>
+                    <a href='http://www.bratfranciszek.pl'><i class="fas fa-globe"></i>bratfranciszek.pl</a>
                 </div>
             </header>
         </div>
@@ -54,6 +60,43 @@
     <footer>
         Handcrafted by me <i class="far fa-copyright"><!--&copy;--></i> 2020
     </footer>
+
+    <script>// quick fix preventing chrome transition bugs :)</script>
+
+    <!-- xmas special -->
+    <div id="xmas"></div>
+    <div id="xmas"></div>
+    <style>
+        #xmas, #xmas:before {
+            --rotation: 0deg;
+            width: 47.5vmax; max-width: 1329px;
+            height: 47.5vmax; max-height: 894px;
+            top: -16px; left: -16px;
+            opacity: .5;
+            position: fixed;
+            pointer-events: none;
+            background: url('imgs/xmas-lights-no-blur.png'); background-size: contain; background-repeat: no-repeat;
+            animation: swing 3s infinite alternate;
+        }
+        #xmas:last-of-type {
+            --rotation: 180deg;
+            bottom: -16px; right: -16px; top: auto; left: auto;
+        }
+        #xmas:before {
+            content: '';
+            background-image: url('imgs/xmas-lights.png');
+            top: 0; left: 0;
+            animation: flicker 2s infinite alternate;
+        }
+        @keyframes swing {
+            from { transform: translate(-8px, -8px) rotate(calc(var(--rotation) - 1deg)); }
+            to { transform: translate(0, 0) rotate(var(--rotation)); }
+        }
+        @keyframes flicker {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
 
 </body>
 </html>
