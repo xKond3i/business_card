@@ -5,6 +5,7 @@
     --mid: #e2e2e2;
     --fg: #242424;
     --lead: #2c4da5;
+    --dark-lead: #254189;
     --spacing: 32px;
 }
 
@@ -57,7 +58,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100vh;
-    background-color: var(--lead);
+    background: linear-gradient(90deg, var(--dark-lead), var(--lead));
     z-index: 2;
 }
 
@@ -101,7 +102,7 @@ a > i, p > i { margin-right: 8px; }
     height: 8px;
     border-radius: 8px;
     margin: 8px 0;
-    background-color: var(--lead);
+    background: linear-gradient(90deg, var(--dark-lead), var(--lead));
 
 }
 
